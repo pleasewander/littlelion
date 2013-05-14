@@ -1,6 +1,5 @@
 BeautifulSoup==3.2.1
 Django==1.5.1
-GnuPGInterface==0.3.2
 Hoover==0.6.0
 Magic-file-extensions==0.2
 Mako==0.7.1
