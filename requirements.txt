@@ -1,4 +1,5 @@
 Django==1.5.1
+gunicorn==0.17.2
 Hoover==0.6.0
 MySQL-python==1.2.3
 createsend==3.0.0
@@ -9,3 +10,4 @@ sendgrid==0.1.3
 simplejson==2.6.1
 stripe==1.7.10
 twilio==3.4.4
+
