@@ -1,5 +1,5 @@
 from django.conf.urls import patterns, include, url
-from littlelion.controller import homecontroller
+from littlelion.controller import homecontroller, accountcontroller
 
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
@@ -18,3 +18,4 @@ urlpatterns = patterns('',
 )
 
 urlpatterns += homecontroller.urlpatterns
+urlpatterns += accountcontroller.urlpatterns

@@ -9,15 +9,17 @@
                     <!-- Be sure to leave the brand out there if you want it shown -->
                     <a class="brand " href="/">Little Lion</a>
 
-                    <ul class="nav">
-                        <li class="divider-vertical"></li>
-                        <li id="comicstab"><a href="/">Comics</a></li>
-                        <li id='donatetab'><a href="/">Donate</a></li>
-                    </ul>
-
-                    <ul class="nav" id="accountinfonav">
-                        <li id="accounttab"><a href="/">Account</a> </li>
-                        <li id="logintab"><a href="/">Log In</a> </li>
+                    <ul class="nav" id="accountInfoNav">
+                        {%  if user.is_authenticated %}
+                            <li id="comicsTab"><a href="/">Comics</a></li>
+                            <li id='donateTab'><a href="/">Donate</a></li>
+                            <li id='accountTab'><a href="/">Account</a> </li>
+                            <li id="logoutTab"><a href="/logout">Log Out</a></li>
+                        {% else %}
+                            <li id="comicsTab"><a href="/">Comics</a></li>
+                            <li id='donateTab'><a href="/">Donate</a></li>
+                            <li id="loginTab"><a href="#modalLogin" role="button" data-toggle="modal">Log In</a> </li>
+                        {% endif %}
                     </ul>
 
                 </div>
@@ -26,3 +28,5 @@
         <div class="container">
             <div class="row">
                 <div class="span12">
+
+{% include "include/modal-login.html" %}

@@ -7,5 +7,5 @@ def homehandler(request):
 
 
 urlpatterns = patterns('littlelion.controller.homecontroller',
-            url(r'$', homehandler),
+            url(r'^$', homehandler),
             )

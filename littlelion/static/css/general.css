@@ -1,0 +1,39 @@
+/*
+**********************************************************************
+General CSS for use to edit how some of the bootstrap works
+**********************************************************************
+*/
+
+/*General styling to all pages */
+p {
+    color: #e5e5e5;
+}
+
+.hero-unit p{
+    color: #000000;
+}
+
+body{
+    background-color: #0d0c0c;
+}
+
+/*Nav Bar */
+body .navbar .brand {
+    font-weight: bold;
+    color: #31696f;
+     text-shadow: 0 1px 0 rgba(255,255,255,.1), 0 0 30px rgba(255,255,255,.125);
+        -webkit-transition: all .2s linear;
+            -moz-transition: all .2s linear;
+                transition: all .2s linear;
+}
+
+
+#accountInfoNav {
+    float: right;
+}
+
+/* Registration Box */
+
+.registerForm {
+    margin-top: 100px;
+}
