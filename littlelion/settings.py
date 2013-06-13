@@ -1,7 +1,7 @@
 # Django settings for littlelion project.
 import os
 
-DEBUG = True
+DEBUG = False
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
@@ -14,9 +14,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
         'NAME': 'littlelion',                      # Or path to database file if using sqlite3.
-        'USER': 'root',
-        'PASSWORD': '',
-        'HOST': '',                      # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
+        'USER': 'b3307a1a443bf9',
+        'PASSWORD': '31f03a38',
+        'HOST': 'us-cdbr-east-03.cleardb.com',                      # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
         'PORT': '3306',                      # Set to empty string for default.
     }
 }
@@ -82,15 +82,6 @@ STATICFILES_FINDERS = (
 # Make this unique, and don't share it with anybody.
 SECRET_KEY = ')!n17us+gkqngoph5@wku&u8*+-g!#vz#2goqh=r9h^*5zl5@i'
 
-#storages for aws
-AWS_STORAGE_BUCKET_NAME = 'littlelion'
-STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
-S3_URL = 'http://%s.s3.amazonaws.com/' % AWS_STORAGE_BUCKET_NAME
-STATIC_URL = S3_URL
-AWS_ACCESS_KEY_ID = 'AKIAI34SX47LXOLQCOGA'
-AWS_SECRET_ACCESS_KEY = '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'
-
-
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (
     'django.template.loaders.filesystem.Loader',
@@ -107,6 +98,14 @@ MIDDLEWARE_CLASSES = (
     # Uncomment the next line for simple clickjacking protection:
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
+
+#storages for aws
+AWS_STORAGE_BUCKET_NAME = 'littlelion'
+STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
+S3_URL = 'http://%s.s3.amazonaws.com/' % AWS_STORAGE_BUCKET_NAME
+STATIC_URL = S3_URL
+AWS_ACCESS_KEY_ID = 'AKIAI34SX47LXOLQCOGA'
+AWS_SECRET_ACCESS_KEY = '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'
 
 ROOT_URLCONF = 'littlelion.urls'
 
