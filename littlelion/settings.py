@@ -13,12 +13,12 @@ MANAGERS = ADMINS
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'littlelion',                      # Or path to database file if using sqlite3.
+        'NAME': 'heroku_37f7234bff8dbec',                      # Or path to database file if using sqlite3.
         'USER': 'b3307a1a443bf9',
         'PASSWORD': '31f03a38',
         'HOST': 'us-cdbr-east-03.cleardb.com',                      # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
-        'PORT': '3306',                      # Set to empty string for default.
-    }
+        'PORT': '3306',                      # Set to empty string for default
+        }
 }
 
 # Hosts/domain names that are valid for this site; required if DEBUG is False
