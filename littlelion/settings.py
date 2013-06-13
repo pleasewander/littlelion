@@ -1,7 +1,7 @@
 # Django settings for littlelion project.
 import os
 
-DEBUG = False
+DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
@@ -84,7 +84,6 @@ SECRET_KEY = ')!n17us+gkqngoph5@wku&u8*+-g!#vz#2goqh=r9h^*5zl5@i'
 
 #storages for aws
 AWS_STORAGE_BUCKET_NAME = 'littlelion'
-DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
 STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
 S3_URL = 'http://%s.s3.amazonaws.com/' % AWS_STORAGE_BUCKET_NAME
 STATIC_URL = S3_URL
