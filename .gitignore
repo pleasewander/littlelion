@@ -1,1 +1,5 @@
 *.idea
+settings.py
+*.idea/dataSources.xml
+littlelion/settings.py
+littlelion/settings.pyc
