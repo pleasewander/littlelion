@@ -1,33 +1,62 @@
 {% include "include/wrapper-top.html" %}
     <div class="row">
-        <div class="span6 offset3 registerForm">
-                <div class="well well-small">
-                <h3 class="text-center"> Join the Cub!</h3>
-                <form id="formRegister" class="form-horizontal">
-                  <div class="control-group">
-                    <label class="control-label">Name</label>
-                    <div class="controls">
-                        <input type="text" class="input-small" name='firstName' placeholder="First">
-                        <input type="text" class="input-small" name='lastName' placeholder="Last">
+        <div class="span12 registerForm">
+            <div class='row'>
+                <div class="span6">
+                    <div class="well well-small">
+                        <h3 class="text-center"> Join the Cub!</h3>
+                        <div class="alert alert-error hide" id="registerError">
+                            <button type="button" class="close">&times;</button>
+                            <strong>Oh no!</strong> someone has used that email already.
+                        </div>
+                        <div class="alert alert-success hide" id="registerSuccess">
+                            <button type="button" class="close">&times;</button>
+                            <strong>Congrats!</strong> and welcome, we will redirect you shortly.
+                        </div>
+                        <form id="formRegister" class="form-horizontal">
+                          <div class="control-group">
+                            <label class="control-label">Name</label>
+                            <div class="controls">
+                                <input type="text" class="input-small" name='firstName' placeholder="First" required>
+                                <input type="text" class="input-small" name='lastName' placeholder="Last" required>
+                            </div>
+                            <label class="control-label">Email</label>
+                            <div class="controls">
+                              <input type="text" name="email" id="createAccountEmail" placeholder="Email" required>
+                            </div>
+                            <label class="control-label" for="registerPassword">Password</label>
+                            <div class="controls">
+                              <input type="password" id="createAccountPassword" name="password" placeholder="Password" required>
+                            </div>
+                          </div>
+                          <div class="control-group">
+                            <div class="controls">
+                              <button type="submit" class="btn btn-inverse">Sign Up</button>
+                            </div>
+                          </div>
+                      </form>
                     </div>
-                    <label class="control-label">Email</label>
-                    <div class="controls">
-                      <input type="text" name="email" placeholder="Email">
+                </div>
+                <div class="span5">
+                    <div class="well well-small">
+                        <h3 class="text-center"> Login</h3>
+                        <form id="loginInfo" class="form-horizontal">
+
+                                <label class="control-label" for="inputEmail">Email</label>
+                                <div class="controls">
+                                    <input type="text" id="inputEmail" name="email" placeholder="Email" required>
+                                </div>
+
+                                <label class="control-label" for="inputPassword">Password</label>
+                                <div class="controls">
+                                    <input type="password" id="inputPassword" name="password" placeholder="Password" required>
+                                </div>
+                                <button class="btn btn-inverse" id='loginButton'>Login</button>
+                        </form>
                     </div>
-                    <label class="control-label" for="registerPassword">Password</label>
-                    <div class="controls">
-                      <input type="password" name="password" placeholder="Password">
-                    </div>
-                  </div>
-                  <div class="control-group">
-                    <div class="controls">
-                      <button type="submit" class="btn btn-info">Sign Up</button>
-                  </div>
-              </div>
-            </form>
+                </div>
+
             </div>
         </div>
-     </div>
-{% include "include/modal-login.html" %}
-
+    </div>
 {% include "include/wrapper-bottom.html" %}

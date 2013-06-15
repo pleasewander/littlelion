@@ -37,3 +37,31 @@ body .navbar .brand {
 .registerForm {
     margin-top: 100px;
 }
+
+.registerForm .span6 .well {
+    background-color: rgb(205, 238, 237);
+}
+
+.registerForm .btn{
+    padding-top: 0px;
+    margin-left:100px;
+}
+
+/* login box */
+
+#loginInfo .controls {
+    margin-left: 70px;
+}
+
+#loginInfo .control-label {
+    width: 100px;
+}
+
+.registerForm .span5 .well{
+    background-color: rgb(205, 238, 237);
+}
+
+#loginButton{
+    margin-top: 5px;
+    margin-left: 260px;
+}

@@ -14,11 +14,15 @@ def register(request):
     email = request.POST.get('email')
     password = request.POST.get('password')
 
-    user = User.objects.create_user(username=email, first_name=firstName, last_name=lastName, email=email)
+    success = False
+
+    if checkEmailExists(email) == False:
+        success = True
+        user = User.objects.create_user(username=email, first_name=firstName, last_name=lastName, email=email)
 
     response = HttpResponse()
     response['content-type'] = 'application/json'
-    response.write(json.dumps({'success': True}))
+    response.write(json.dumps({'success': success}))
     return response
 
 def dologin(request):
@@ -26,19 +30,19 @@ def dologin(request):
     userPassword = request.POST.get('password')
 
     user = auth.authenticate(username=userEmail, password=userPassword)
-    status = ''
+    success = True
     msg = ''
 
     if user is not None:
         auth.login(request, user)
-        status = 'success'
+        success = True
     else:
-        status = 'failure'
+        success = False
         msg = 'Not a valid account'
 
     response = HttpResponse()
     response['content-type'] = 'application/json'
-    response.write(json.dumps({'status' : status , 'message' : msg }))
+    response.write(json.dumps({'success' : success , 'message' : msg }))
 
     return response
 
@@ -46,9 +50,34 @@ def dologout(request):
     auth.logout(request)
     return render(request, 'home.html')
 
+
+def checkEmail(request):
+    email = request.POST.get('email')
+    status = True
+    if checkEmailExists(email):
+        status = False
+
+    response = HttpResponse()
+    response['Content-Type'] = 'application/json'
+    response.write(json.dumps({'success' : status}))
+    return response
+
+def checkEmailExists(emailToCheck):
+    status = True
+    numberOfUsers = User.objects.all().filter(email= emailToCheck).count()
+
+    if numberOfUsers == 0 :
+        status = False
+
+    if emailToCheck == '':
+        status = False
+
+    return status
+
 urlpatterns = patterns('littlelion.controller.accountcontroller',
             url(r'^register$', createaccountpage),
             url(r'^createaccount$', register),
             url(r'^login', dologin),
             url(r'^logout', dologout),
+            url(r'^checkemail', checkEmail)
             )
