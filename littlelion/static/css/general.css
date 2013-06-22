@@ -65,3 +65,9 @@ body .navbar .brand {
     margin-top: 5px;
     margin-left: 260px;
 }
+
+/* slider css */
+#homeSlider{
+    margin-top: -20px;
+
+}
